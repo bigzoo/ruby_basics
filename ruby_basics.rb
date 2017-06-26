@@ -31,27 +31,28 @@ class String
 
 ###Gimme a 10
 class Fixnum 
-    define_method(:kumi)do
+    define_method(:gimme_ten)do
       10
     end
   end
 ##tests
-7.kumi()   => 10
-422343432432433243532432423432.kumi()    =>  10
+7.gimme_ten()   => 10
+422343432432433243532432423432.gimme_ten()    =>  10
 
 
 ###Float half method
 class Float
-    define_method(:nusu)do
+    define_method(:half)do
       self/2
     end
   end
 ##tests
-float_number = 
+float_number = 2.5
+float_number.half()  =>  1.75
 
-###Next in line method: Makes the last in an array the first
+###Next in line method: Makes the first in an array the last
 class Array
-    define_method(:laini) do
+    define_method(:next_in_line) do
       val = self[0]
       self.shift()
       self.push(val)
@@ -59,6 +60,18 @@ class Array
   end
 ##tests
 arr = [1,2,3,4,5,6]
-arr.laini()    =>   [2,3,4,5,6,1]
+arr.next_in_line()    =>   [2,3,4,5,6,1]
 
-###Trimmer
+###Trimmer Removes both the first and last element in array list
+class Array
+      define_method(:trim) do
+        self.shift()
+        self.pop()
+        self
+      end
+  end
+##tests
+arr = [1,2,3,4,5,6]
+arr.trim()  =>  [2,3,4,5]
+
+
