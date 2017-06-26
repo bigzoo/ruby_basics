@@ -75,3 +75,32 @@ arr = [1,2,3,4,5,6]
 arr.trim()  =>  [2,3,4,5]
 
 
+###Defining a method with arguments
+
+###Adding method
+class Fixnum
+    define_method(:add) do |number_to_add|
+      self.+(number_to_add)
+    end
+  end
+##tests
+5.add(3)  => 8
+
+###Subtract method
+class Fixnum 
+    define_method(:subtract) do |number_to_minus|
+      self.-(number_to_minus)
+    end
+  end
+##tests
+5.subtract(2) => 3
+
+
+###Combine method
+class String
+    define_method(:combine)do |other_string|
+    self.concat(other_string)
+    end
+  end
+##tests
+"Hello ".combine("World") => "Hello World"
